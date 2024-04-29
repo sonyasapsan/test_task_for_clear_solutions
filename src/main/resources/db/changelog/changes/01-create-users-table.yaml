@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: sonia_baranova
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(150)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birth_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(150)
+              - column:
+                  name: phone_number
+                  type: varchar(30)
+                  constraints:
+                    unique: true

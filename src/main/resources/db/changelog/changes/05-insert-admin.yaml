@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-admin
+      author: sonia_baranova
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: email
+                  value: admin@gmail.com  # Вставте потрібний email.
+              - column:
+                  name: password
+                  value: password12345  # Вставте хеш пароля.
+              - column:
+                  name: first_name
+                  value: Admin
+              - column:
+                  name: last_name
+                  value: First
+              - column:
+                  name: birth_date
+                  valueDate: '2004-03-03'
+        - insert:
+            tableName: user_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueNumeric: 1
+              - column:
+                  name: role_id
+                  valueNumeric: 2
